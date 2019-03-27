@@ -1,0 +1,77 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 650px;
+}
+
+.header {
+  background-color: orangered;
+  flex-grow: 1;
+  width: 900px;
+}
+.main-content {
+  flex-grow: 8;
+  background-color: orchid;
+  width: 900px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.left-section {
+  width: 180px;
+  background-color: olivedrab;
+}
+
+.mid-section {
+  width: 540px;
+  background-color: #ffc966;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.right-section {
+  width: 180px;
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.single-table {
+  width: 80px;
+  height: 80px;
+  margin: 15px;
+  background-color: ghostwhite;
+  border: 1px solid lightgrey;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.menu-item {
+  width: 50%;
+  border: 2px solid lightgrey;
+  border-radius: 0;
+  height: 80px;
+}
+
+button.menu-item:disabled {
+  background-color: lightgoldenrodyellow;
+}
