@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "./Header";
-import Orders from "./Orders";
+import DetailsContainer from "../containers/DetailsContainer.js";
 import Tables from "./Tables";
 import Menu from "./Menu";
 
@@ -11,7 +11,7 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="main-content">
-        <Orders />
+        <DetailsContainer />
         <Tables />
         <Menu />
       </div>
