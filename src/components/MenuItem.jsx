@@ -1,10 +1,17 @@
 import React from "react";
 
 const MenuItem = props => {
-  var content = `$${props.price} ${props.name}`;
   return (
-    <button className="menu-item" disabled={props.disabled}>
-      {content}
+    <button 
+      className="menu-item" 
+      onClick={() => 
+        props.onAdd(props.name, props.price, props.selectedTable)
+      }
+      disabled={
+        !props.toggledTables.includes(props.selectedTable)
+      }
+    >
+      ${props.price} {props.name}
     </button>
   );
 };

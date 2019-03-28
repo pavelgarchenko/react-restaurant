@@ -1,9 +1,9 @@
 import React from "react";
 import TableButtonContainer from "../containers/TableButtonContainer.js";
 
-const Tables = props => {
-  var arr = Array(16).fill(0);
-  var tables = arr.map((data, i) => {
+const Tables = () => {
+  var arr = [...Array(16).keys()];
+  var tables = arr.map((i) => {
     return <TableButtonContainer key={i} id={i} />;
   });
   return <div className="mid-section">{tables}</div>;

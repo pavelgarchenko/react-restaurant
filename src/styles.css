@@ -28,6 +28,9 @@
 .left-section {
   width: 180px;
   background-color: olivedrab;
+
+  height: 480px;
+  overflow: auto;
 }
 
 .mid-section {
@@ -86,4 +89,20 @@ button.menu-item:active {
 
 button.menu-item:disabled {
   background-color: lightgoldenrodyellow;
+}
+
+.order-item {
+  display: block;
+  position: relative;
+  padding: 3px 10px;
+  font-size: 14px;
+}
+.order-item > button {
+  float: left;
+}
+.order-item > span.name {
+ 
+}
+.order-item > span.price {
+  float: right;
 }

@@ -2,8 +2,8 @@ import React from "react";
 
 import Header from "./Header";
 import Tables from "./Tables";
+import Menu from "./Menu";
 import DetailsContainer from "../containers/DetailsContainer.js";
-import MenuContainer from "../containers/MenuContainer.js";
 
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       <div className="main-content">
         <DetailsContainer />
         <Tables />
-        <MenuContainer />
+        <Menu />
       </div>
     </div>
   ); 

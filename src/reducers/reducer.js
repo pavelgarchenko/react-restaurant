@@ -1,9 +1,45 @@
 import { combineReducers } from "redux";
 import { 
+  ADD_TABLE_ITEM,
+  DELETE_TABLE_ITEM,
   SELECT_TABLE, 
   TOGGLE_TABLE 
 } from "../constants/constants";
 
+
+var initialTableData = []
+
+for (let i = 0; i < 16; i ++) {
+  initialTableData.push([]);
+}
+
+const tableData = (state = initialTableData, action) => {
+  switch (action.type) {
+    case ADD_TABLE_ITEM:
+      var newState = []
+      for (let i = 0; i < 16; i ++) {
+        newState.push(state[i].slice());
+      }
+      newState[action.tableId].push(action.item)
+      return newState;
+    case DELETE_TABLE_ITEM:
+      var newState = []
+      for (let i = 0; i < 16; i ++) {
+        newState.push(state[i].slice());
+      }
+      newState[action.tableId].splice(action.id, 1)
+      return newState;
+    // case TOGGLE_TABLE:
+    //   var newState = []
+    //   for (let i = 0; i < 16; i ++) {
+    //     newState.push(state[i].slice());
+    //   }
+    //   newState[action.id] = []
+    //   return newState
+    default:
+      return state;
+  }
+};
 
 const selectedTable = (state = null, action) => {
   switch (action.type) {
@@ -13,14 +49,13 @@ const selectedTable = (state = null, action) => {
       return state;
   }
 };
+
 const toggledTables = (state = [], action) => {
   switch (action.type) {
     case TOGGLE_TABLE:
       if (state.includes(action.id)) {
-        console.log("Removing Table: ", action.id)
         return state.filter(id => id !== action.id);
       } else {
-        console.log("Adding Table: ", action.id)
         return [...state, action.id];
       }
     default:
@@ -29,6 +64,7 @@ const toggledTables = (state = [], action) => {
 };
 
 const reducer = combineReducers({
+  tableData,
   selectedTable,
   toggledTables,
 });
