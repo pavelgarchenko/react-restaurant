@@ -1,5 +1,7 @@
 const SELECT_TABLE = "SELECT_TABLE";
+const TOGGLE_TABLE = "TOGGLE_TABLE";
 
 module.exports = {
   SELECT_TABLE,
+  TOGGLE_TABLE,
 }

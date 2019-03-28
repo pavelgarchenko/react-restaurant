@@ -70,6 +70,18 @@ button.menu-item {
   border: 2px solid lightgrey;
   border-radius: 0;
   height: 80px;
+  background-color: #fff;
+  transition: 0.2s;
+
+}
+
+button.menu-item:hover {
+  background-color: #fafafa;;
+  
+}
+
+button.menu-item:active {
+  background-color: #ddd;
 }
 
 button.menu-item:disabled {

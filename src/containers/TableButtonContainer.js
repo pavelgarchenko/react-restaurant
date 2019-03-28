@@ -4,7 +4,8 @@ import selectTable from "../actions/selectTable.js";
 
 const mapStateToProps = state => {
   return {
-    selectedTable: state.selectedTable
+    selectedTable: state.selectedTable,
+    toggledTables: state.toggledTables
   }
 }
 
