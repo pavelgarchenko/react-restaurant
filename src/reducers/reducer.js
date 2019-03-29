@@ -3,7 +3,8 @@ import {
   ADD_TABLE_ITEM,
   DELETE_TABLE_ITEM,
   SELECT_TABLE, 
-  TOGGLE_TABLE 
+  TOGGLE_TABLE,
+  INCREMENT_EARNINGS,
 } from "../constants/constants";
 
 
@@ -12,6 +13,8 @@ var initialTableData = []
 for (let i = 0; i < 16; i ++) {
   initialTableData.push([]);
 }
+
+var initialTableStatusData = Array(16).fill(false);
 
 const tableData = (state = initialTableData, action) => {
   switch (action.type) {
@@ -29,13 +32,13 @@ const tableData = (state = initialTableData, action) => {
       }
       newState[action.tableId].splice(action.id, 1)
       return newState;
-    // case TOGGLE_TABLE:
-    //   var newState = []
-    //   for (let i = 0; i < 16; i ++) {
-    //     newState.push(state[i].slice());
-    //   }
-    //   newState[action.id] = []
-    //   return newState
+    case TOGGLE_TABLE: // Check in button click -> remove all orderItems for table ID
+      var newState = []
+      for (let i = 0; i < 16; i ++) {
+        newState.push(state[i].slice());
+      }
+      newState[action.id] = [];
+      return newState;
     default:
       return state;
   }
@@ -50,23 +53,31 @@ const selectedTable = (state = null, action) => {
   }
 };
 
-const toggledTables = (state = [], action) => {
+const tableStatusData = (state = initialTableStatusData, action) => {
   switch (action.type) {
     case TOGGLE_TABLE:
-      if (state.includes(action.id)) {
-        return state.filter(id => id !== action.id);
-      } else {
-        return [...state, action.id];
-      }
+      var newState = state.slice();
+      newState[action.id] = !newState[action.id]
+      return newState;
     default:
       return state;
   }
 };
 
+const moneyEarned = (state = 0, action) => {
+  switch (action.type) {
+    case INCREMENT_EARNINGS:
+      return state + action.amount;
+    default:
+      return state;
+  }
+}
+
 const reducer = combineReducers({
   tableData,
   selectedTable,
-  toggledTables,
+  tableStatusData,
+  moneyEarned,
 });
 
 export default reducer;

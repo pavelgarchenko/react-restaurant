@@ -5,7 +5,7 @@ import deleteTableItem from "../actions/deleteTableItem.js";
 const mapStateToProps = state => {
   return {
     selectedTable: state.selectedTable,
-    toggledTables: state.toggledTables,
+    checkedIn: state.tableStatusData[state.selectedTable],
     items: state.tableData[state.selectedTable]
   }
 }

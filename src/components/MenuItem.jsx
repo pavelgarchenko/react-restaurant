@@ -7,9 +7,7 @@ const MenuItem = props => {
       onClick={() => 
         props.onAdd(props.name, props.price, props.selectedTable)
       }
-      disabled={
-        !props.toggledTables.includes(props.selectedTable)
-      }
+      disabled={!props.tableStatusData[props.selectedTable]}
     >
       ${props.price} {props.name}
     </button>

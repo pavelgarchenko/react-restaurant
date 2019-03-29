@@ -5,7 +5,7 @@ import addTableItem from "../actions/addTableItem.js";
 const mapStateToProps = state => {
   return {
     selectedTable: state.selectedTable,
-    toggledTables: state.toggledTables
+    tableStatusData: state.tableStatusData,
   }
 }
 
