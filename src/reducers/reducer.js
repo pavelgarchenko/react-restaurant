@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { 
+  NUMBER_OF_TABLES,
   ADD_TABLE_ITEM,
   DELETE_TABLE_ITEM,
   SELECT_TABLE, 
@@ -8,33 +9,33 @@ import {
 } from "../constants/constants";
 
 
-var initialTableData = []
+var initTableData = []
 
-for (let i = 0; i < 16; i ++) {
-  initialTableData.push([]);
+for (let i = 0; i < NUMBER_OF_TABLES; i ++) {
+  initTableData.push([]);
 }
 
-var initialTableStatusData = Array(16).fill(false);
+var initTableStatusData = Array(NUMBER_OF_TABLES).fill(false);
 
-const tableData = (state = initialTableData, action) => {
+const tableData = (state = initTableData, action) => {
   switch (action.type) {
     case ADD_TABLE_ITEM:
       var newState = []
-      for (let i = 0; i < 16; i ++) {
+      for (let i = 0; i < NUMBER_OF_TABLES; i ++) {
         newState.push(state[i].slice());
       }
       newState[action.tableId].push(action.item)
       return newState;
     case DELETE_TABLE_ITEM:
       var newState = []
-      for (let i = 0; i < 16; i ++) {
+      for (let i = 0; i < NUMBER_OF_TABLES; i ++) {
         newState.push(state[i].slice());
       }
       newState[action.tableId].splice(action.id, 1)
       return newState;
     case TOGGLE_TABLE: // Check in button click -> remove all orderItems for table ID
       var newState = []
-      for (let i = 0; i < 16; i ++) {
+      for (let i = 0; i < NUMBER_OF_TABLES; i ++) {
         newState.push(state[i].slice());
       }
       newState[action.id] = [];
@@ -53,7 +54,7 @@ const selectedTable = (state = null, action) => {
   }
 };
 
-const tableStatusData = (state = initialTableStatusData, action) => {
+const tableStatusData = (state = initTableStatusData, action) => {
   switch (action.type) {
     case TOGGLE_TABLE:
       var newState = state.slice();

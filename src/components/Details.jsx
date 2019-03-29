@@ -1,6 +1,8 @@
 import React from "react";
+
 import ToggleTableContainer from "../containers/ToggleTableContainer";
 import OrderListContainer from "../containers/OrderListContainer";
+
 
 const Details = props => {
   return (

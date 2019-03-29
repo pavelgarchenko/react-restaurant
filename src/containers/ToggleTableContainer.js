@@ -3,6 +3,7 @@ import ToggleTable from "../components/ToggleTable.jsx";
 import toggleTable from "../actions/toggleTable.js";
 import incrementEarnings from "../actions/incrementEarnings.js";
 
+
 const mapStateToProps = state => {
   return {
     selectedTable: state.selectedTable,

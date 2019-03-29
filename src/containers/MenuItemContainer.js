@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import MenuItem from "../components/MenuItem.jsx";
 import addTableItem from "../actions/addTableItem.js";
 
+
 const mapStateToProps = state => {
   return {
     selectedTable: state.selectedTable,
