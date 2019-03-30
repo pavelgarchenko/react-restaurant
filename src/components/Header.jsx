@@ -8,7 +8,7 @@ const Header = props => {
 
   return (
     <div className="header">
-      <h1>Restaurant</h1>
+      <h1>Restaurant Management System</h1>
       <div className="header-info">
         <h2 className="available-tables">Available Tables: <span className="number">{available} / {NUMBER_OF_TABLES}</span></h2>
         <h2 className="money-earned">Money Earned: <span className="amount">${props.moneyEarned}</span></h2>
