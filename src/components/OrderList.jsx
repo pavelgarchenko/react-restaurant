@@ -13,7 +13,7 @@ const OrderList = props => {
           x
         </button>
         <span className="name">{item.name}</span>
-        <span className="price">${item.price}</span>
+        <span className="amount">${item.price}</span>
       </div>
     )
   })
@@ -22,7 +22,7 @@ const OrderList = props => {
   if (props.checkedIn) {
     return (
       <div>
-        <h3>Bill Total: ${orderTotal}</h3>
+        <h3 className="bill-total">Bill Total: <span className="amount"> ${orderTotal}</span></h3>
         <h4>Orders:</h4>
         {orderList}
       </div>

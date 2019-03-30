@@ -2,15 +2,13 @@ import React from "react";
 
 
 const TableButton = props => {
-  var style = {
-    border: props.selectedTable === props.id ? "1 px solid blue" : null,
-    backgroundColor: props.tableStatusData[props.id] ? "red" : null,
-  }
+  console.log(props.tableStatusData)
+  var classSelected = props.selectedTable === props.id ? "selected" : "";
+  var classToggled = props.tableStatusData[props.id] ? "toggled" : "";
 
   return (
     <button 
-      className="single-table" 
-      style={style} 
+      className={`table-btn ${classSelected}  ${classToggled}`}
       onClick={() => props.onSelect(props.id)}
     >
      {props.id}

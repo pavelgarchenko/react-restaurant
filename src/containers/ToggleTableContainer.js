@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
       for( let i = 0; i < tableData[id].length; i ++) {
         total += tableData[id][i].price;
       }
-      console.log("total: " + total)
+      console.log("id: " + id)
       dispatch(toggleTable(id));
       dispatch(incrementEarnings(total));
     },

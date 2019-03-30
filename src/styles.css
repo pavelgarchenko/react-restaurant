@@ -5,6 +5,7 @@ h3, h4 {
 .App {
   font-family: sans-serif;
   text-align: center;
+  color: #353535;
 }
 
 .App {
@@ -15,30 +16,56 @@ h3, h4 {
 }
 
 .header {
-  background-color: orangered;
+  background-color: #3a6ef6;
   flex-grow: 1;
   width: 900px;
+  color: #fff;
 }
+
+.header-info {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.available-tables {
+  color: #353535;
+  margin: 5px 0;
+}
+
+.available-tables span.number {
+  color: #3a6ef6;
+  font-weight: normal;
+  font-size: 120%;
+}
+
+.money-earned {
+  color: #353535;
+  margin: 10px 0;
+}
+
+.money-earned > span.amount {
+  color: #ff6d50;
+  font-weight: normal;
+  font-size: 140%;
+}
+
 .main-content {
   flex-grow: 8;
-  background-color: orchid;
   width: 900px;
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 
 .left-section {
-  width: 180px;
-  background-color: olivedrab;
-
+  width: 220px;
   height: 480px;
+  background-color: #a9c969;
   overflow: auto;
 }
 
 .mid-section {
-  width: 540px;
+  width: 465px;
   background-color: #ffc966;
 
   display: flex;
@@ -50,7 +77,7 @@ h3, h4 {
 }
 
 .right-section {
-  width: 180px;
+  width: 215px;
   background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction: row;
@@ -60,16 +87,25 @@ h3, h4 {
   align-content: center;
 }
 
-.single-table {
+.table-btn {
   width: 80px;
   height: 80px;
   margin: 15px;
-  background-color: ghostwhite;
-  border: 1px solid lightgrey;
-  color: #333;
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #353535;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
+  transition: 0.2s;
+}
+.mid-section button.selected {
+  border: 5px solid #8da9ee;
+}
+.mid-section button.toggled {
+  background-color: #ff6d50;
+  color: #fff;
 }
 
 button.menu-item {
@@ -79,19 +115,36 @@ button.menu-item {
   height: 80px;
   background-color: #fff;
   transition: 0.2s;
-
+  font-weight: bold;
+  font-size: 14px;
 }
 
-button.menu-item:hover {
-  background-color: #fafafa;;
+button.toggle-table-btn {
+  width: 100px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin: 15px;
+  border: none;
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+button.menu-item:hover, button.toggle-table-btn:hover {
+  background-color: #fafafa;
   
 }
 
-button.menu-item:active {
+button.menu-item:active, button.toggle-table-btn:active {
   background-color: #ddd;
 }
 
 button.menu-item:disabled {
+  background-color: lightgoldenrodyellow;
+}
+
+button.toggle-table-btn:disabled {
   background-color: lightgoldenrodyellow;
 }
 
@@ -107,6 +160,25 @@ button.menu-item:disabled {
 .order-item > span.name {
  
 }
-.order-item > span.price {
+.order-item > span.amount {
   float: right;
+  color: #fff;
+}
+
+.bill-total {
+  background: #fff;
+  color: #353535;
+  padding: 5px 0;
+}
+
+.bill-total > span.amount {
+  color: #ff6d50;
+  font-weight: normal;
+  font-size: 140%;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #6e6e6e;
+  width: 85%;
 }
