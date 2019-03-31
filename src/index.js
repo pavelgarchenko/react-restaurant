@@ -6,7 +6,7 @@ import reducer from "./reducers/reducer";
 
 import App from "./components/App";
 
-import "./styles.css";
+import "./styles.scss";
 
 var store = createStore(reducer);
 

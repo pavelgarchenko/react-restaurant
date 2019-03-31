@@ -8,9 +8,6 @@ h3, h4 {
   font-family: sans-serif;
   text-align: center;
   color: #222f3e;
-}
-
-.App {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -23,33 +20,35 @@ h3, h4 {
   width: 900px;
   height:190px;
   color: #fff;
-}
 
-.header-info {
-  background-color: #fff;
-  padding: 10px 0;
+  .header-info {
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
 }
 
 .available-tables {
   color: #222f3e;
   margin: 5px 0;
+  
+  span.number {
+    color: #3a6ef6;
+    font-weight: normal;
+    font-size: 120%;
+  }
 }
 
-.available-tables span.number {
-  color: #3a6ef6;
-  font-weight: normal;
-  font-size: 120%;
-}
 
 .money-earned {
   color: #222f3e;
   margin: 10px 0;
-}
-
-.money-earned > span.amount {
-  color: #ff6b6b;
-  font-weight: normal;
-  font-size: 140%;
+  
+  span.amount {
+    color: #ff6b6b;
+    font-weight: normal;
+    font-size: 140%;
+  }
 }
 
 .main-content {
@@ -78,6 +77,27 @@ h3, h4 {
   justify-content: center;
   align-items: center;
   align-content: center;
+
+  .table-btn {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #222f3e;
+    display: inline-block;
+    font-size: 40px;
+    transition: 0.2s;
+  }
+  
+  button.selected {
+    border: 5px solid #54a0ff;
+  }
+
+  button.toggled {
+    background-color: #ff6b6b;
+    color: #fff;
+  }
 }
 
 .right-section {
@@ -92,24 +112,6 @@ h3, h4 {
   align-content: center;
 }
 
-.table-btn {
-  width: 80px;
-  height: 80px;
-  margin: 15px;
-  background-color: #fff;
-  border: 2px solid #fff;
-  color: #222f3e;
-  display: inline-block;
-  font-size: 40px;
-  transition: 0.2s;
-}
-.mid-section button.selected {
-  border: 5px solid #54a0ff;
-}
-.mid-section button.toggled {
-  background-color: #ff6b6b;
-  color: #fff;
-}
 
 button.menu-item {
   width: 50%;
@@ -120,7 +122,18 @@ button.menu-item {
   transition: 0.2s;
   font-weight: bold;
   font-size: 14px;
+  
+  &:hover {
+    background-color: #1dd0a1;
+  }
+  
+  &:active {
+    background-color: #1dd0a1;
+    background-color: #10ac84;
+    color: #fff;
+  }
 }
+
 
 button.toggle-table-btn {
   width: 100px;
@@ -132,26 +145,19 @@ button.toggle-table-btn {
   border: none;
   background-color: #fff;
   transition: 0.2s;
-}
-button.toggle-table-btn:hover {
-  border-bottom: 4px solid #576574;
-}
-button.toggle-table-btn:active {
-  border: none;
-}
-button.toggle-table-btn:disabled {
-  border: none;
-  background-color: #c8d6e5;
+
+  &:hover {
+    border-bottom: 4px solid #576574;
+  }
+  &:active {
+    border: none;
+  }
+  &:disabled {
+    border: none;
+    background-color: #c8d6e5;
+  }
 }
 
-button.menu-item:hover {
-  background-color: #1dd0a1;
-}
-button.menu-item:active {
-  background-color: #1dd0a1;
-  background-color: #10ac84;
-  color: #fff;
-}
 button.menu-item:disabled {
   background-color: #c8d6e5;
   position: relative;
@@ -162,30 +168,29 @@ button.menu-item:disabled {
   display: block;
   padding: 3px 10px;
   font-size: 14px;
-}
-.order-item > button {
-  float: left;
-  border: none;
-  background-color: #fff;
-}
-.order-item > span.name {
- 
-}
-.order-item > span.amount {
-  float: right;
-  color: #fff;
+  
+  & > button {
+    float: left;
+    border: none;
+    background-color: #fff;
+  }
+
+  .amount {
+    float: right;
+    color: #fff;
+  }
 }
 
 .bill-total {
   background: #fff;
   color: #222f3e;
   padding: 5px 0;
-}
 
-.bill-total > span.amount {
-  color: #ff6b6b;
-  font-weight: normal;
-  font-size: 140%;
+  span.amount {
+    color: #ff6b6b;
+    font-weight: normal;
+    font-size: 140%;
+  }
 }
 
 hr {
