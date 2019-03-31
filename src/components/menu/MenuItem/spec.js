@@ -13,81 +13,66 @@ const setup = (props={}) => {
 describe('MenuItem Component', () => {
 
   describe('Has Props', () => {  
-    let wrapper;
+    let component;
+    let props;
     beforeEach(() => {
-      const props = {
+      props = {
         name: "Test Name",
         price: 1,
-        tableStatusData: [false],
+        tableStatusData: Array(16).fill(false),
         selectedTable: 0
       };
-      wrapper = setup(props);
+      component = setup(props);
     });
 
     it('Should render without errors', () => {
-      const component = findByTestAttr(wrapper, "menu-item");
-      expect(component.length).toBe(1);
+      const wrapper = findByTestAttr(component, "menu-item");
+      expect(wrapper.length).toBe(1);
     }); // Should render without errors
 
     it('Should display text in format "${price} {name}"', () => {
-      const component = findByTestAttr(wrapper, "menu-item");
-      expect(component.text()).toBe('$1 Test Name');
+      const wrapper = findByTestAttr(component, "menu-item");
+      expect(wrapper.text()).toBe('$1 Test Name');
     }); // Should display text in format "${price} {name}"
     
     describe('Disabled', () => {
       describe('When table NOT TOGGLED', () => {
        
         it('When table NOT SELECTED', () => {
-          const props = {
-            name: "Test menu item",
-            price: 1,
-            tableStatusData: [false], // is NOT toggled
-            selectedTable: 1 // 2nd table is selected
-          };
-          const wrapper = setup(props);
-          const component = findByTestAttr(wrapper, "menu-item");
-          expect(component.prop('disabled')).toBe(true);
+          props['tableStatusData'][0] = false // is NOT toggled
+          props['selectedTable'] = 1 // 2nd table is selected
+          component = setup(props);
+          const wrapper = findByTestAttr(component, "menu-item");
+          expect(wrapper.prop('disabled')).toBe(true);
         }); // When table NOT SELECTED
 
         it('When table SELECTED', () => {
-          const props = {
-            name: "Test menu item",
-            price: 1,
-            tableStatusData: [false], // is NOT toggled
-            selectedTable: 0 // is selected
-          };
-          const wrapper = setup(props);
-          const component = findByTestAttr(wrapper, "menu-item");
-          expect(component.prop('disabled')).toBe(true);
+          props['tableStatusData'][0] = false // is NOT toggled
+          props['selectedTable'] = 0 // is selected
+          component = setup(props);
+          const wrapper = findByTestAttr(component, "menu-item");
+          expect(wrapper.prop('disabled')).toBe(true);
         }); // When table SELECTED
       }); // When table NOT TOGGLED
 
       describe('When table TOGGLED', () => {
-       it('When table NOT SELECTED', () => {
-         const props = {
-           name: "Test menu item",
-           price: 1,
-           tableStatusData: [true], // is toggled
-           selectedTable: 1 // 2nd table is selected
-         };
-         const wrapper = setup(props);
-         const component = findByTestAttr(wrapper, "menu-item");
-         expect(component.prop('disabled')).toBe(true);
-       }); // When table NOT SELECTED
+        it('When table NOT SELECTED', () => {
+          props['tableStatusData'][0] = true // is toggled
+          props['selectedTable'] = 1 // 2nd table is selected
+          component = setup(props);
+          const wrapper = findByTestAttr(component, "menu-item");
+          expect(wrapper.prop('disabled')).toBe(true);
+        }); // When table NOT SELECTED
       }); // When table TOGGLED
     }); // Disabled
     
     describe('Enabled', () => {
       it('When table TOGGLED and SELECTED', () => {
-        const props = {
-          name: "Test menu item",
-          price: 1,
-          tableStatusData: [true], // toggled
-          selectedTable: 0 // table is selected
-        };
-        const wrapper = setup(props);
-        const component = findByTestAttr(wrapper, "menu-item");
-        expect(component.prop('disabled')).toBe(false);
+        props['tableStatusData'][0] = true // is toggled
+        props['selectedTable'] = 0 // table is selected
+        component = setup(props);
+        const wrapper = findByTestAttr(component, "menu-item");
+        expect(wrapper.prop('disabled')).toBe(false);
       }); // When table TOGGLED and SELECTED
     }); // Enabled
   }); // Has Props

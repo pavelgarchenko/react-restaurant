@@ -2,7 +2,6 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import Menu from './index';
-import MenuItem from './MenuItem/MenuItem';
 import { findByTestAttr } from '../../../utils/tests/index'; 
 
 const setup = (props={}) => {
@@ -12,12 +11,12 @@ const setup = (props={}) => {
 
 
 describe('Menu Component', () => {
-
+  
   let component;
   beforeEach(() => {
     component  = setup();
   })
-
+    
   it('Should render without errors', () => {
     const wrapper = findByTestAttr(component, "menu-wrapper");
     expect(wrapper.length).toBe(1);
@@ -28,4 +27,3 @@ describe('Menu Component', () => {
     expect(wrapper.children().length).toBe(12);
   });
 });
-
