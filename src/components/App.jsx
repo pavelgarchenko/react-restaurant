@@ -1,7 +1,7 @@
 import React from "react";
 
 import Tables from "./Tables";
-import Menu from "./Menu";
+import Menu from "./menu";
 import HeaderContainer from "../containers/HeaderContainer.js";
 import DetailsContainer from "../containers/DetailsContainer.js";
 

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import MenuItem from "../components/MenuItem.jsx";
+import MenuItem from "../components/menu/MenuItem/MenuItem.jsx";
 import addTableItem from "../actions/addTableItem.js";
 
 
