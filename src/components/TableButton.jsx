@@ -11,7 +11,7 @@ const TableButton = props => {
       className={`table-btn ${classSelected}  ${classToggled}`}
       onClick={() => props.onSelect(props.id)}
     >
-     {props.id}
+     {props.id + 1}
     </button>
   )
 };
